@@ -2,17 +2,21 @@ import { observer } from "mobx-react-lite";
 import { Profile } from "../../app/models/profile";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { truncate } from "../../app/common/CommonFunctions";
 
 interface Props {
     profile: Profile;
 }
 export default observer(function ProfileCard({ profile }: Props) {
+
     return (
         <Card as={Link} to={`/profiles/${profile.userName}`}>
             <Image src={profile.image || "/assets/user.png"} />
             <Card.Content>
                 <Card.Header>{profile.displayName}</Card.Header>
-                <Card.Description>Bio goes here</Card.Description>
+                <Card.Description>
+                    {truncate(profile.bio, 40)}
+                </Card.Description>
             </Card.Content>
             <Card.Content extra>
                 <Icon name="user" />
