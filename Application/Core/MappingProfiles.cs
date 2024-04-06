@@ -1,5 +1,5 @@
-using System.Security.Cryptography.X509Certificates;
 using Application.Activities;
+using Application.Comments;
 using AutoMapper;
 using Domain;
 
@@ -21,6 +21,10 @@ namespace Application.Core
 
             CreateMap<AppUser, Profiles.Profile>()
             .ForMember(x => x.Image, o => o.MapFrom(a=> a.Photos.FirstOrDefault(s=>s.IsMain).Url));
+            CreateMap<Comment, CommentDto>()
+                .ForMember(x=>x.DisplayName, o=>o.MapFrom(a=>a.Author.DisplayName))
+                .ForMember(x=>x.UserName, o=>o.MapFrom(a=>a.Author.UserName))
+                .ForMember(x => x.Image, o => o.MapFrom(a=> a.Author.Photos.FirstOrDefault(s=>s.IsMain).Url));
         }
     }
 }

@@ -182,4 +182,7 @@ runInAction(()=>{
         }
     }
 
+    clearSelectedActivity = () => {
+        this.selectedActivity = undefined;
+    }
 }
