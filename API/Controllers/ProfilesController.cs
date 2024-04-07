@@ -16,7 +16,8 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateProfile(EditProfile.Command command){
+        public async Task<IActionResult> UpdateProfile(EditProfile.Command command)
+        {
             return HandleResult(await Mediator.Send(command));
         }
     }
