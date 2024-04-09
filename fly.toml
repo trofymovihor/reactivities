@@ -1,0 +1,28 @@
+# fly.toml app configuration file generated for ihort-reactivities on 2024-04-09T14:26:25+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ihort-reactivities'
+primary_region = 'waw'
+
+[build]
+  image = 'ihortrofymov/reactivities:latest'
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  Cloudinary__CloudName="dhjbw9w8s"
+  Cloudinary__ApiKey="133536321371815"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1

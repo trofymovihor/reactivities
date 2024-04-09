@@ -5,24 +5,18 @@
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialRename : Migration
+    public partial class PostgreInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Catefory",
-                table: "Activities",
-                newName: "Category");
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Category",
-                table: "Activities",
-                newName: "Catefory");
+
         }
     }
 }
