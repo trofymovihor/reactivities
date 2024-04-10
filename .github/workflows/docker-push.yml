@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: trofymovihor/reactivities:latest
+          tags: ihortrofymov/reactivities:latest
   # deploy:
   #   needs: docker
   #   name: Deploy app
