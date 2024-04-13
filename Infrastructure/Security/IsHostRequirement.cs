@@ -32,7 +32,7 @@ namespace Infrastructure.Security
             var activityId = Guid.Parse(_httpContextAccessor.HttpContext?.Request.RouteValues.SingleOrDefault(a =>
             a.Key == "id").Value?.ToString());
 
-            var attendee = _dbContext.ActivityAttendees
+            var attendee =  _dbContext.ActivityAttendees
             .AsNoTracking()
             .SingleOrDefaultAsync(x => x.AppUserId == userId && x.ActivityId == activityId).Result;
 

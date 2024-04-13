@@ -1,18 +1,18 @@
-# fly.toml app configuration file generated for ihort-reactivities on 2024-04-09T14:26:25+03:00
+# fly.toml app configuration file generated for ihor-reactivities on 2024-04-13T11:13:27+03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'ihort-reactivities'
+app = 'ihor-reactivities'
 primary_region = 'waw'
 
 [build]
-  image = 'ihortrofymov/reactivities:latest'
+  image = 'ihortrofymov/reactive:latest'
 
 [env]
-  ASPNETCORE_URLS="http://+:8080"
-  Cloudinary__CloudName="dhjbw9w8s"
-  Cloudinary__ApiKey="133536321371815"
+  ASPNETCORE_URLS = 'http://+:8080'
+  Cloudinary__ApiKey = '133536321371815'
+  Cloudinary__CloudName = 'dhjbw9w8s'
 
 [http_service]
   internal_port = 8080
